@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="28dp"> <!-- Đã tăng khoảng cách phía trên để không bị sát đỉnh màn hình -->
+
+    <TextView
+        android:id="@+id/tvTenSuKienChiTiet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên Sự Kiện"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        tools:ignore="HardcodedText,VisualLintSystemUi" />
+
+    <TextView
+        android:id="@+id/tvMaSuKienChiTiet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mã SK: ----"
+        android:textSize="14sp"
+        android:textColor="#D32F2F"
+        android:layout_marginTop="2dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tvSoTienQuyHienCo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quỹ hiện có: 0 VNĐ"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#388E3C"
+        android:layout_marginTop="6dp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tvTiLeDongQuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đã đóng: 0/0"
+        android:textSize="14sp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="8dp"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:id="@+id/etTenThanhVienMoi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Nhập tên thành viên"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textSize="14sp"
+            tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+        <Button
+            android:id="@+id/btnThemThanhVien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm"
+            android:layout_marginStart="8dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnSapXepThanhVien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sắp xếp: A-Z"
+            android:textSize="11sp"
+            tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btnSaoChepThanhVien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sao chép DS"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btnChuyenHoatDongChi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quản lý Chi"
+            android:textSize="11sp"
+            android:layout_marginStart="4dp"
+            tools:ignore="ButtonStyle,HardcodedText,VisualLintButtonSize" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDanhSachThanhVien"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Khu vực dưới cùng: Nút Back nằm bên trái, nút Xóa sự kiện bên phải -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_arrow_back"
+            tools:ignore="TouchTargetSizeCheck,HardcodedText" />
+
+        <Button
+            android:id="@+id/btnXoaSuKien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="XÓA SỰ KIỆN NÀY"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+    </LinearLayout>
+
+</LinearLayout>

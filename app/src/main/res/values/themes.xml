@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sử dụng Theme.AppCompat làm parent để tương thích hoàn toàn với AppCompatActivity -->
+    <style name="Theme.QuanLyQuy" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Tùy chỉnh màu sắc chủ đạo của ứng dụng (nếu muốn) -->
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryDark">#1565C0</item>
+        <item name="colorAccent">#4CAF50</item>
+    </style>
+</resources>

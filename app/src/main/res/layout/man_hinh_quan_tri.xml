@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="28dp"> <!-- Đã tăng khoảng cách phía trên để không bị sát đỉnh màn hình -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUẢN TRỊ HỆ THỐNG - DANH SÁCH THỦ QUỸ"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#D32F2F"
+        android:layout_marginBottom="12dp"
+        tools:ignore="HardcodedText,VisualLintSystemUi" />
+
+    <!-- RecyclerView co giãn ở giữa, chừa khoảng trống cho nút Back phía dưới -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDanhSachTaiKhoanAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Khu vực dưới cùng: Nút Back nằm ở góc trái, cách đáy 16dp đồng bộ hoàn toàn -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_arrow_back"
+            tools:ignore="TouchTargetSizeCheck,HardcodedText" />
+
+    </LinearLayout>
+
+</LinearLayout>

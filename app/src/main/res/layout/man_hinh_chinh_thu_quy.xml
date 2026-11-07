@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="28dp"
+    tools:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <!-- Phần tìm kiếm và sắp xếp ở trên cùng -->
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <EditText
+            android:id="@+id/etTimKiemSuKien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Tìm tên hoặc mã sự kiện..."
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            tools:ignore="Autofill,HardcodedText,TextContrastCheck,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize,VisualLintSystemUi,VisualLintBounds" />
+
+        <Spinner
+            android:id="@+id/spSapXepSuKien"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:minHeight="48dp"
+            android:entries="@array/danh_sach_sap_xep_su_kien"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <!-- RecyclerView nằm ở giữa, giới hạn không bị đè bởi cụm nút phía dưới -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSuKien"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTop"
+        android:layout_above="@id/layoutBottomAction"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Thông báo khi không có sự kiện -->
+    <TextView
+        android:id="@+id/tvKhongCoSuKien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="không có sự kiện nào được tạo"
+        android:textSize="16sp"
+        android:textColor="#888888"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="HardcodedText" />
+
+    <!-- Khu vực dưới cùng: Nút Back bên trái, nút dấu cộng tròn (FAB) bên phải, ngang hàng và nhích lên tránh nút Home -->
+    <RelativeLayout
+        android:id="@+id/layoutBottomAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Nút Back (quay lại) nằm ở góc trái -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_arrow_back"
+            tools:ignore="TouchTargetSizeCheck,HardcodedText" />
+
+        <!-- Nút dấu cộng hình tròn (FloatingActionButton) nằm ở góc phải, giữ nguyên kiểu dáng ban đầu -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabTaoSuKien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="#FFFFFF"
+            android:contentDescription="Tạo sự kiện mới"
+            tools:ignore="HardcodedText,ImageContrastCheck,SpeakableTextPresentCheck" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

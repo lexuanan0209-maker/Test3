@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="danh_sach_sap_xep_su_kien">
+        <item>Tên A-Z</item>
+        <item>Thời gian tạo</item>
+        <item>Số lượng thành viên</item>
+    </string-array>
+</resources>
